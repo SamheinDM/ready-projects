@@ -61,7 +61,10 @@ function operationClick(op) {
 }
 
 function numberClick(number) {
-    if (NewNumber === true) {
+    if (NewNumber === true && IsItCleared == true) {
+        display.value = number;
+        IsItCleared = false;
+    } else if (NewNumber === true) {
         CurrentNumberMemory = parseFloat(display.value);
         display.value = number;
     } else {
