@@ -1,5 +1,6 @@
 body {
   font-size: 20px;
+  background-color: #1d1d1d;
 }
 .main {
   display: flex;
@@ -39,6 +40,9 @@ body {
   cursor: pointer;
   transition: 0.1s all;
 }
+#pow-btn {
+  text-transform: none;
+}
 .btn-hover-red:hover {
   background-color: #d83e33;
   color: #f2f2f2;
@@ -53,12 +57,6 @@ body {
 }
 .btn:active {
   transform: translateY(-1px);
-}
-.btn-long {
-  width: 183px;
-}
-.btn-equal {
-  height: 145px;
 }
 input,
 button {

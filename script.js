@@ -36,23 +36,35 @@ decimal.addEventListener('click', function (e) {
 
 function operationClick(op) {
     NewNumber = true;
-    if (CurrentOperation === '') {
+    if (op === '\u221A') {
+        if (parseFloat(display.value) < 0) {
+            display.value = 'Ошибка';
+        } else {
+            CurrentNumberMemory = Math.sqrt(display.value);
+            display.value = parseFloat(CurrentNumberMemory.toFixed(15));
+            CurrentOperation = '';
+        }
+    } else if (CurrentOperation === '') {
         CurrentOperation = op;
     } else if (CurrentOperation === '+') {
         CurrentNumberMemory += parseFloat(display.value);
-        display.value = CurrentNumberMemory;
+        display.value = parseFloat(CurrentNumberMemory.toFixed(15));
         CurrentOperation = '';
     } else if (CurrentOperation === '-') {
-        CurrentNumberMemory -= display.value;
-        display.value = CurrentNumberMemory;
+        CurrentNumberMemory -= parseFloat(display.value);
+        display.value = parseFloat(CurrentNumberMemory.toFixed(15));
         CurrentOperation = '';
     } else if (CurrentOperation === '/') {
-        CurrentNumberMemory /= display.value;
-        display.value = CurrentNumberMemory;
+        CurrentNumberMemory /= parseFloat(display.value);
+        display.value = parseFloat(CurrentNumberMemory.toFixed(15));
         CurrentOperation = '';
     } else if (CurrentOperation === '*') {
-        CurrentNumberMemory *= display.value;
-        display.value = CurrentNumberMemory;
+        CurrentNumberMemory *= parseFloat(display.value);
+        display.value = parseFloat(CurrentNumberMemory.toFixed(15));
+        CurrentOperation = '';
+    } else if (CurrentOperation === 'nx') {
+        CurrentNumberMemory = Math.pow(CurrentNumberMemory, display.value);
+        display.value = parseFloat(CurrentNumberMemory.toFixed(15));
         CurrentOperation = '';
     } else {
         CurrentOperation = '';
