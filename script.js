@@ -7,6 +7,7 @@ const display = document.getElementById('display');
 var CurrentNumberMemory = 0;
 var NewNumber = true;
 var CurrentOperation = '';
+var IsItCleared = false;
 
 for (let i = 0; i < operations.length; i++) {
     var operation = operations[i];
@@ -77,9 +78,11 @@ function numberClick(number) {
 function clearClick(params) {
     NewNumber = true;
     display.value = 0;
-    if (params == 'c') {
+    if (params === 'c') {
         CurrentOperation = '';
         CurrentNumberMemory = 0;
+    } else {
+        IsItCleared = true;
     }
     console.log('Нажат ' + params);
 }
