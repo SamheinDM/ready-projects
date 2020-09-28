@@ -85,8 +85,13 @@ function clearClick(params) {
 }
 
 function decimalClick(dec) {
+    if (NewNumber == true) {
+        CurrentNumberMemory = parseFloat(display.value);
+        display.value = '0.';
+        NewNumber = false;
+    }
     if (display.value.indexOf(dec) === -1) {
         display.value += dec;
     }
-    console.log('Нажата ' + dec); //ставить 0. если NewNumber = true и нажали сразу точку
+    console.log('Нажата ' + dec);
 }
