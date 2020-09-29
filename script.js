@@ -3,6 +3,7 @@ const numbers = document.querySelectorAll('.number');
 const clear = document.querySelectorAll('.clear-btn');
 const decimal = document.getElementById('decimal');
 const display = document.getElementById('display');
+const minus = document.getElementById('minus');
 
 var CurrentNumberMemory = 0;
 var NewNumber = true;
@@ -32,6 +33,10 @@ for (let i = 0; i < clear.length; i++) {
 
 decimal.addEventListener('click', function (e) {
     decimalClick(e.target.textContent);
+})
+
+minus.addEventListener('click', function (e) {
+    minusClick();
 })
 
 function operationClick(op) {
@@ -112,4 +117,8 @@ function decimalClick(dec) {
         display.value += dec;
     }
     console.log('Нажата ' + dec);
+}
+
+function minusClick() {
+    display.value *= -1;
 }
