@@ -58,6 +58,9 @@ body {
 .btn:active {
   transform: translateY(-1px);
 }
+.btn-long {
+  width: 183px;
+}
 input,
 button {
   padding: 5px 15px;
