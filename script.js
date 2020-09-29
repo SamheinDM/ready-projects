@@ -54,23 +54,23 @@ function operationClick(op) {
     } else if (CurrentOperation === '+') {
         CurrentNumberMemory += parseFloat(display.value);
         display.value = parseFloat(CurrentNumberMemory.toFixed(15));
-        CurrentOperation = '';
+        CurrentOperation = op;
     } else if (CurrentOperation === '-') {
         CurrentNumberMemory -= parseFloat(display.value);
         display.value = parseFloat(CurrentNumberMemory.toFixed(15));
-        CurrentOperation = '';
+        CurrentOperation = op;
     } else if (CurrentOperation === '/') {
         CurrentNumberMemory /= parseFloat(display.value);
         display.value = parseFloat(CurrentNumberMemory.toFixed(15));
-        CurrentOperation = '';
+        CurrentOperation = op;
     } else if (CurrentOperation === '*') {
         CurrentNumberMemory *= parseFloat(display.value);
         display.value = parseFloat(CurrentNumberMemory.toFixed(15));
-        CurrentOperation = '';
+        CurrentOperation = op;
     } else if (CurrentOperation === 'nx') {
         CurrentNumberMemory = Math.pow(CurrentNumberMemory, display.value);
         display.value = parseFloat(CurrentNumberMemory.toFixed(15));
-        CurrentOperation = '';
+        CurrentOperation = op;
     } else {
         CurrentOperation = '';
     }
