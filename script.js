@@ -72,9 +72,10 @@ function operationClick(op) {
         display.value = parseFloat(CurrentNumberMemory.toFixed(15));
         CurrentOperation = op;
     } else {
-        CurrentOperation = '';
+        CurrentOperation = op;
     }
-    console.log('Нажата операция ' + op);
+    //console.log('Нажата операция ' + op);
+    //console.log(`CNM ${CurrentNumberMemory}\nCO ${CurrentOperation}\nNew ${NewNumber}\nClear ${IsItCleared}`);
 }
 
 function numberClick(number) {
@@ -92,7 +93,8 @@ function numberClick(number) {
         }
     }
     NewNumber = false;
-    console.log('Нажат номер ' + number);
+    //console.log('Нажат номер ' + number);
+    //console.log(`CNM ${CurrentNumberMemory}\nCO ${CurrentOperation}\nNew ${NewNumber}\nClear ${IsItCleared}`);
 }
 
 function clearClick(params) {
@@ -104,7 +106,8 @@ function clearClick(params) {
     } else {
         IsItCleared = true;
     }
-    console.log('Нажат ' + params);
+    //console.log('Нажат ' + params);
+    //console.log(`CNM ${CurrentNumberMemory}\nCO ${CurrentOperation}\nNew ${NewNumber}\nClear ${IsItCleared}`);
 }
 
 function decimalClick(dec) {
@@ -116,7 +119,8 @@ function decimalClick(dec) {
     if (display.value.indexOf(dec) === -1) {
         display.value += dec;
     }
-    console.log('Нажата ' + dec);
+    //console.log('Нажата ' + dec);
+    //console.log(`CNM ${CurrentNumberMemory}\nCO ${CurrentOperation}\nNew ${NewNumber}\nClear ${IsItCleared}`);
 }
 
 function minusClick() {
