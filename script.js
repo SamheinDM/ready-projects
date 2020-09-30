@@ -46,30 +46,30 @@ function operationClick(op) {
             display.value = 'Ошибка';
         } else {
             CurrentNumberMemory = Math.sqrt(display.value);
-            display.value = parseFloat(CurrentNumberMemory.toFixed(15));
+            display.value = parseFloat(CurrentNumberMemory.toFixed(9));
             CurrentOperation = '';
         }
     } else if (CurrentOperation === '') {
         CurrentOperation = op;
     } else if (CurrentOperation === '+') {
         CurrentNumberMemory += parseFloat(display.value);
-        display.value = parseFloat(CurrentNumberMemory.toFixed(15));
+        display.value = parseFloat(CurrentNumberMemory.toFixed(9));
         CurrentOperation = op;
     } else if (CurrentOperation === '-') {
         CurrentNumberMemory -= parseFloat(display.value);
-        display.value = parseFloat(CurrentNumberMemory.toFixed(15));
+        display.value = parseFloat(CurrentNumberMemory.toFixed(9));
         CurrentOperation = op;
     } else if (CurrentOperation === '/') {
         CurrentNumberMemory /= parseFloat(display.value);
-        display.value = parseFloat(CurrentNumberMemory.toFixed(15));
+        display.value = parseFloat(CurrentNumberMemory.toFixed(9));
         CurrentOperation = op;
     } else if (CurrentOperation === '*') {
         CurrentNumberMemory *= parseFloat(display.value);
-        display.value = parseFloat(CurrentNumberMemory.toFixed(15));
+        display.value = parseFloat(CurrentNumberMemory.toFixed(9));
         CurrentOperation = op;
-    } else if (CurrentOperation === 'nx') {
+    } else if (CurrentOperation === 'nx' || CurrentOperation === 'x') {
         CurrentNumberMemory = Math.pow(CurrentNumberMemory, display.value);
-        display.value = parseFloat(CurrentNumberMemory.toFixed(15));
+        display.value = parseFloat(CurrentNumberMemory.toFixed(9));
         CurrentOperation = op;
     } else {
         CurrentOperation = op;
@@ -88,7 +88,7 @@ function numberClick(number) {
     } else {
         if (display.value == '0') {
             display.value = number;
-        } else {
+        } else if (display.value + number <= 999999999999999999){
             display.value += number;
         }
     }
